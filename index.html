@@ -3,30 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Aditya Jaswal - Portfolio</title>
     <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color);
+            background-color: var(--bg-color);
         }
 
         header {
-            background-color: #2c3e50;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
+            padding: 4rem 0;
             text-align: center;
-            padding: 2rem 0;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
         }
 
         nav {
-            background-color: #34495e;
+            background-color: white;
             padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         nav ul {
@@ -37,8 +65,14 @@
         }
 
         nav a {
-            color: white;
+            color: var(--text-color);
             text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
         }
 
         .container {
@@ -48,67 +82,122 @@
         }
 
         .section {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 6px;
+        }
+
+        .skill-category h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background-color: #e0e7ff;
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin: 0.25rem;
+            font-size: 0.9rem;
         }
 
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
 
         .project-card {
-            border: 1px solid #ddd;
-            padding: 1rem;
-            border-radius: 5px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
+        .project-card:hover {
+            transform: translateY(-5px);
         }
 
-        .skill-tag {
-            background-color: #3498db;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        footer {
-            background-color: #2c3e50;
-            color: white;
+        .contact-info {
             text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
         }
 
         .social-links {
-            margin-top: 1rem;
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
         }
 
         .social-links a {
-            color: white;
-            margin: 0 1rem;
+            color: var(--primary-color);
             text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .education-item h3 {
+            color: var(--secondary-color);
+        }
+
+        .education-item p {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Your Name</h1>
-        <p>Web Developer | Designer | Creator</p>
+        <div class="header-content">
+            <h1>Aditya Jaswal</h1>
+            <p>Data Analyst | Software Developer | Big Data Enthusiast</p>
+        </div>
     </header>
 
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -116,56 +205,100 @@
     <div class="container">
         <section id="about" class="section">
             <h2>About Me</h2>
-            <p>Hello! I'm a passionate developer with experience in creating modern web applications. I love solving complex problems and building user-friendly interfaces.</p>
+            <p>With a strong academic foundation and a deep passion for data analysis, I am actively seeking opportunities to apply my knowledge in a professional environment. I specialize in big data analytics and software development, combining technical expertise with problem-solving skills to drive meaningful outcomes.</p>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Cython</span>
+                    <span class="skill-tag">SQL</span>
+                </div>
+                <div class="skill-category">
+                    <h3>GUI Frameworks</h3>
+                    <span class="skill-tag">Qt (C++)</span>
+                    <span class="skill-tag">PyQt</span>
+                    <span class="skill-tag">ImGui</span>
+                </div>
+                <div class="skill-category">
+                    <h3>Graphics & Technologies</h3>
+                    <span class="skill-tag">OpenGL</span>
+                    <span class="skill-tag">DirectX</span>
+                    <span class="skill-tag">Hadoop</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2>Work Experience</h2>
+            <div class="project-card">
+                <h3>Data Analyst Intern</h3>
+                <p>Main Flow Services and Technologies, Noida</p>
+                <p>Jul 2024 - Sept 2024</p>
+                <ul>
+                    <li>Utilized Python for data cleaning, transformation, and analysis tasks</li>
+                    <li>Applied statistical methods and machine learning algorithms</li>
+                    <li>Generated reports and visualizations for team presentations</li>
+                    <li>Implemented data-driven solutions for process improvement</li>
+                </ul>
+            </div>
         </section>
 
         <section id="projects" class="section">
             <h2>Projects</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>Project 1</h3>
-                    <p>Description of your first project. What you did, technologies used, and outcomes.</p>
-                    <a href="#">View Project</a>
+                    <h3>Generative AI Chatbot</h3>
+                    <p>Developed a sophisticated chatbot using Large Language Models (LLMs) capable of adopting diverse character personas and handling image-based data.</p>
                 </div>
                 <div class="project-card">
-                    <h3>Project 2</h3>
-                    <p>Description of your second project. What you did, technologies used, and outcomes.</p>
-                    <a href="#">View Project</a>
+                    <h3>DirectX-Based Game Engine</h3>
+                    <p>Implemented a robust game engine using C++ and DirectX with Dear ImGui interface and Bullet Physics SDK integration.</p>
                 </div>
                 <div class="project-card">
-                    <h3>Project 3</h3>
-                    <p>Description of your third project. What you did, technologies used, and outcomes.</p>
-                    <a href="#">View Project</a>
+                    <h3>Encryption-Decryption Software</h3>
+                    <p>Created secure encryption-decryption software using Python and AES algorithm for data confidentiality.</p>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="section">
-            <h2>Skills</h2>
-            <div class="skills-list">
-                <span class="skill-tag">HTML5</span>
-                <span class="skill-tag">CSS3</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Git</span>
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Chandigarh University, Mohali</h3>
+                <p>B.E. in CSE (Hons.) in Big Data Analytics (ITP) in association with IBM</p>
+                <p>July 2022 - July 2026 | GPA: 7.7/10.0</p>
+            </div>
+            <div class="education-item">
+                <h3>Mahavir Public School Sundernagar</h3>
+                <p>Intermediate | March 2021 - March 2022</p>
+                <p>Percentage: 75%</p>
+            </div>
+            <div class="education-item">
+                <h3>Mahavir Public School Sundernagar</h3>
+                <p>Matriculation | March 2019 - March 2020</p>
+                <p>Percentage: 86%</p>
             </div>
         </section>
 
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
-            <p>Email: your.email@example.com</p>
+        <section id="contact" class="section contact-info">
+            <h2>Contact Me</h2>
+            <p>Email: aaditya.j.snr@gmail.com</p>
+            <p>Phone: +917590878893</p>
+            <p>Location: SunderNagar, Himachal Pradesh</p>
             <div class="social-links">
-                <a href="https://github.com/yourusername">GitHub</a>
-                <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
-                <a href="https://twitter.com/yourusername">Twitter</a>
+                <a href="https://linkedin.com/in/aditya-jaswal-9461b024a" target="_blank">LinkedIn</a>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Aditya Jaswal. All rights reserved.</p>
     </footer>
 </body>
 </html>
